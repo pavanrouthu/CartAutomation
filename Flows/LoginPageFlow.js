@@ -8,3 +8,7 @@ exports.loginToAccount = function(){
 	login.enterPassword('password');
 	login.submitLogin();
 };
+exports.createAccount = function(){
+	var login = new LoginPage();
+	login.createAccount();
+};

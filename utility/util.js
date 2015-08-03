@@ -17,10 +17,37 @@ var utildata = function(){
 			"summarybtn": $('.pg-body.ng-scope a.btn.red')
 		},	
 		"orderLogin":{
-			"username": $('.flip-pane.front.cart-box.rc input[id="username"]'),
-			"password": $('.flip-pane.front.cart-box.rc input[id="password"]'),
-			"loginbtn": $('form[name="loginForm"] button.btn.red')
-		},	
+			"existingusername": $('.flip-pane.front.cart-box.rc input[id="username"]'),
+			"existingpassword": $('.flip-pane.front.cart-box.rc input[id="password"]'),
+			"loginbtn": element.all(By.css('form[name="loginForm"] button.btn.red')).first(),
+			// "loginbtn": $('form[name="loginForm"] button.btn.red'),
+			"newlogin": element.all(By.css('.cell.create-account .btn')).first(),
+			"firstname": element.all(By.id('firstname')).first(),
+			"lastname": element.all(By.id('lastname')).first(),
+			"organisation": element(By.id('organisation')),
+			"address": element(By.id('address')),
+			"country": $('select[id="country"]').element(By.cssContainingText('option', 'Australia')),
+			"state": $('select[id="state"]').element(By.cssContainingText('option', 'Victoria')),
+			"suburb": element(By.id('suburb')),
+			"postcode": element(By.id('postcode')),
+			"phoneno": element(By.id('phone')),
+			"emailaddress": element(By.id('email')),
+			"username": element.all(By.id('username')).first(),
+			"password": element.all(By.id('password')).first(),
+			"createaccountbtn": $('form[name="createAccountForm"] button.btn.red')
+		},
+		"orderpayment":{
+			"ccno": element(By.id('number')),
+			"ccv": element(By.id('cvv')),
+			"ccmonth": $('select[id="expiryMonth"]').element(By.cssContainingText('option', 'May')),
+			"ccyr": $('select[id="expiryYear"]').element(By.cssContainingText('option', '2020')),
+			"ccname": element(By.id('name')),
+			"paymentbtn": $('form[name="ccForm"] button.btn.red')
+		},			
+		"orderconf":{
+			"ordercomplete": element(By.css('.pg-body.ng-scope h1')),
+			"orderid": element.all(By.css('.summary p')).first()
+		},
 
 		getLocator : function(page,elementname){
 			var self = this;

@@ -2,6 +2,9 @@ var domainSearchLaunch = require('./Flows/DomainSearchFlow.js');
 var domainSearchResultsLaunch = require('./Flows/DomainSearchResultsFlow.js');
 var orderSummaryLaunch = require('./Flows/OrderSummaryFlow.js');
 var loginPageLaunch = require('./Flows/LoginPageFlow.js');
+var upsellLaunch = require('./Flows/UpsellFlow.js');
+var paymentLaunch = require('./Flows/PaymentFlow.js');
+var thankYouPageLaunch = require('./Flows/ThankYouPageFlow.js');
 
 describe('Verify Order Flow', function(){
 
@@ -72,4 +75,59 @@ describe('Verify Order Flow', function(){
 		loginPageLaunch.loginToAccount();
 
 	});
+
+//Test case to create a new myaccount within new cart
+
+	it('to create new user credentials on the Login page',function(){
+
+		domainSearchLaunch.DomainSearchFlow();
+		domainSearchResultsLaunch.addToCart();
+		orderSummaryLaunch.priceChange();
+		orderSummaryLaunch.submitSummaryPage();
+		loginPageLaunch.createAccount();
+
+	});
+
+//Test case to check the upsell pages within new cart
+
+	it('to check for the upsell flow',function(){
+
+		domainSearchLaunch.DomainSearchFlow();
+		domainSearchResultsLaunch.addToCart();
+		orderSummaryLaunch.priceChange();
+		orderSummaryLaunch.submitSummaryPage();
+		loginPageLaunch.loginToAccount();
+		upsellLaunch.UpsellFlow();
+
+	});
+
+//Test case to check the checkout within new cart
+
+	it('to verify the checkout functionality',function(){
+
+		domainSearchLaunch.DomainSearchFlow();
+		domainSearchResultsLaunch.addToCart();
+		orderSummaryLaunch.priceChange();
+		orderSummaryLaunch.submitSummaryPage();
+		loginPageLaunch.loginToAccount();
+		upsellLaunch.UpsellFlow();
+		paymentLaunch.createPayment();
+
+	});
+
+//Test case to check the order confirmation after checkout within new cart
+
+	it('to verify the order confirmation after checkout',function(){
+
+		domainSearchLaunch.DomainSearchFlow();
+		domainSearchResultsLaunch.addToCart();
+		orderSummaryLaunch.priceChange();
+		orderSummaryLaunch.submitSummaryPage();
+		loginPageLaunch.loginToAccount();
+		upsellLaunch.UpsellFlow();
+		paymentLaunch.createPayment();
+		thankYouPageLaunch.orderConfirmation();
+
+	});
+
 });
