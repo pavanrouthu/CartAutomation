@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Shopping Cart Test Suite" errors="0" tests="0" failures="0" time="0" timestamp="2015-08-07T16:07:54">
+</testsuite>
+<testsuite name="Shopping Cart Test Suite.Checks different tests within the Order Flow" errors="0" tests="9" failures="0" time="108.351" timestamp="2015-08-07T16:06:06">
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="searches for a domain" time="5.072"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="selects the domain from the domain search result and adds to the cart" time="7.554"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="verify the products that were added to the cart" time="6.505"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to change the default value of the Price" time="6.469"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to continue with the domain selected on the Order Summary page" time="8.088"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to login using an existing login credentials on the Login page" time="11.739"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to create new user credentials on the Login page" time="10.928"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to check for the upsell flow" time="13.138"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to verify the order confirmation after checkout" time="38.856"></testcase>
+</testsuite>
+</testsuites>

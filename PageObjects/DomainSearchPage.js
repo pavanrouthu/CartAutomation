@@ -1,5 +1,5 @@
 
-var uuid = require('uuid');
+// var uuid = require('uuid');
 var utils = require('../utility/util.js');
 
 var DomainSearchPage = function(){
@@ -8,9 +8,9 @@ var DomainSearchPage = function(){
   var domBtn = utils.getLocator('domainsearchpage','searchBtn');
   var domRes = utils.getLocator('domainsearchresults','domAvail');
 
-  this.enterDomain = function(){
-    var randStrg = uuid.v1();
-    global.dom = 'refactor' + randStrg + '.com';
+  this.enterDomain = function(dom){
+    // var randStrg = uuid.v1();
+    // global.dom = 'refactor' + randStrg + '.com';
     domSearch.sendKeys(dom);
 
   };

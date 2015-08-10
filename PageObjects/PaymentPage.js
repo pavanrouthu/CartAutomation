@@ -3,7 +3,7 @@ var utils = require('../utility/util.js');
 
 var PaymentPage = function(){
 
-    this.enterCreditCardDetails = function(){
+    this.enterCreditCardDetails = function(ccno, ccv, ccname){
           var ccnumber = utils.getLocator('orderpayment','ccno');
           var cvv = utils.getLocator('orderpayment', 'ccv');
 
@@ -15,11 +15,11 @@ var PaymentPage = function(){
 
 
     
-          ccnumber.sendKeys('4111111111111111');
-          cvv.sendKeys('123');
+          ccnumber.sendKeys(ccno);
+          cvv.sendKeys(ccv);
           ccmnth.click();
           ccyear.click();
-          creditrcardname.sendKeys('TestCard');
+          creditrcardname.sendKeys(ccname);
           paymentbutton.click();
           browser.driver.sleep(120);
           browser.waitForAngular();

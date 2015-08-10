@@ -1,3 +1,4 @@
+var dropdownData = require('../testData/testdata.json');
 
 var utildata = function(){
 
@@ -39,8 +40,8 @@ var utildata = function(){
 		"orderpayment":{
 			"ccno": element(By.id('number')),
 			"ccv": element(By.id('cvv')),
-			"ccmonth": $('select[id="expiryMonth"]').element(By.cssContainingText('option', 'May')),
-			"ccyr": $('select[id="expiryYear"]').element(By.cssContainingText('option', '2020')),
+			"ccmonth": $('select[id="expiryMonth"]').element(By.cssContainingText('option', dropdownData.ccmonth)),
+			"ccyr": $('select[id="expiryYear"]').element(By.cssContainingText('option', dropdownData.ccyear)),
 			"ccname": element(By.id('name')),
 			"paymentbtn": $('form[name="ccForm"] button.btn.red')
 		},			
@@ -48,7 +49,10 @@ var utildata = function(){
 			"ordercomplete": element(By.css('.pg-body.ng-scope h1')),
 			"orderid": element.all(By.css('.summary p')).first()
 		},
-
+		"renewdomain":{
+			"renewsearch": element.all(By.model('form.element.query.value')).first(),
+			"renewBtn": element.all(By.css('.element-group>button')).first()
+		},
 		getLocator : function(page,elementname){
 			var self = this;
 			return self[page][elementname];

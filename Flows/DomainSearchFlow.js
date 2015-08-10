@@ -4,11 +4,11 @@ var DomainSearchPage = require('../PageObjects/DomainSearchPage.js');
 var DomainSearchResultsPage = require('../PageObjects/DomainSearchResultsPage.js');
 
 
-exports.DomainSearchFlow = function(){
+exports.DomainSearchFlow = function(dom){
 	var domainSearchPage = new DomainSearchPage();
 	var domainSearchResultsPage = new DomainSearchResultsPage();
 
-        domainSearchPage.enterDomain();
+        domainSearchPage.enterDomain(dom);
 
         domainSearchPage.searchDomain();
 
