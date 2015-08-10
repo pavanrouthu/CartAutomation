@@ -9,7 +9,7 @@
 // });
 
 exports.config = {
-  seleniumAddress: 'http://127.0.0.1:4445/wd/hub',
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   specs: ['sanitytest.spec.js'],
   baseUrl: 'https://stage.melbourneit.com.au/',
   allScriptsTimeout: 10000000,
