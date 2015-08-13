@@ -11,16 +11,13 @@ var OrderSummaryPage = function(){
 
   this.changePrice = function(yr){
 	var priceoption = element(by.cssContainingText('option', yr));
-
 		  
 	priceoption.isPresent().then(function(result){
-    console.log(result);
 		if (result){
 			priceoption.click();
-      browser.waitForAngular();
 		}
 	});
-    //browser.waitForAngular();
+    browser.waitForAngular();
   };
 
   this.clickContinueOnSummary = function(){

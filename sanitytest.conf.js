@@ -18,11 +18,11 @@ exports.config = {
   //-----------------------------------------------------------------
   //Browser and Capabilities: Firefox
   //-----------------------------------------------------------------
-  capabilities: {
-    browserName: 'chrome',
-    version: '',
-    platform: 'ANY'
-  },
+  // capabilities: {
+  //   browserName: 'chrome',
+  //   version: '',
+  //   platform: 'ANY'
+  // },
 
   //  onPrepare: function() {
 		// jasmine.getEnv().addReporter(reporter);

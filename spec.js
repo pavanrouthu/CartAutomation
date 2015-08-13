@@ -173,7 +173,7 @@ describe('Shopping Cart Test Suite', function(){
 				//A unique domain name is generated
 				var randStrg = uuid.v1();
 				var dom = 'test' + randStrg + prodspace;
-				//console.log(dom);
+				console.log(dom);
 
 				//All the domainspaces are defined here
 			    var gtld = [".net",".com",".info", ".biz",".org", ".mobi"];
@@ -213,12 +213,12 @@ describe('Shopping Cart Test Suite', function(){
 						paymentLaunch.createPayment(ccno, ccv, ccname);
 						thankYouPageLaunch.orderConfirmation();
 
-						// renewPageLaunch.renewDomains(dom);
-						// orderSummaryLaunch.priceChange(yr);
-						// orderSummaryLaunch.submitSummaryPage();
-						// loginPageLaunch.loginToAccount(user, pass);
-						// paymentLaunch.createPayment(ccno, ccv, ccname);
-						// thankYouPageLaunch.orderConfirmation();
+						renewPageLaunch.renewDomains(dom);
+						orderSummaryLaunch.priceChange(yr);
+						orderSummaryLaunch.submitSummaryPage();
+						loginPageLaunch.loginToAccount(user, pass);
+						paymentLaunch.createPayment(ccno, ccv, ccname);
+						thankYouPageLaunch.orderConfirmation();
 				}//**** End ccTLD Order Flow ****
 
 				//**** newgTLD Order Flow ****
@@ -232,12 +232,12 @@ describe('Shopping Cart Test Suite', function(){
 						paymentLaunch.createPayment(ccno, ccv, ccname);
 						thankYouPageLaunch.orderConfirmation();
 
-						// renewPageLaunch.renewDomains(dom);
-						// orderSummaryLaunch.priceChange(yr);
-						// orderSummaryLaunch.submitSummaryPage();
-						// loginPageLaunch.loginToAccount(user, pass);
-						// paymentLaunch.createPayment(ccno, ccv, ccname);
-						// thankYouPageLaunch.orderConfirmation();
+						renewPageLaunch.renewDomains(dom);
+						orderSummaryLaunch.priceChange(yr);
+						orderSummaryLaunch.submitSummaryPage();
+						loginPageLaunch.loginToAccount(user, pass);
+						paymentLaunch.createPayment(ccno, ccv, ccname);
+						thankYouPageLaunch.orderConfirmation();
 			    }//**** End newgTLD Order Flow ****
 
 			} // end of the loop
