@@ -9,7 +9,6 @@ var paymentLaunch = require('./Flows/PaymentFlow.js');
 var thankYouPageLaunch = require('./Flows/ThankYouPageFlow.js');
 
 
-
 describe('Shopping Cart Test Suite', function(){
 
 	var data = require('./testData/testdata.json');
@@ -49,7 +48,7 @@ describe('Shopping Cart Test Suite', function(){
 			it('searches for a domain', function(){
 
 			 domainSearchLaunch.DomainSearchFlow(genericdomain);
-					
+				
 		    });
 
 		//Test case to select available domain and added it to the cart
@@ -112,7 +111,7 @@ describe('Shopping Cart Test Suite', function(){
 				domainSearchResultsLaunch.addToCart();
 				orderSummaryLaunch.priceChange(commonyear);
 				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
+				loginPageLaunch.createAccount(user, pass);
 
 			});
 

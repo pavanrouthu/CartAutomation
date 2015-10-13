@@ -47,7 +47,8 @@ var utildata = function(){
 		},			
 		"orderconf":{
 			"ordercomplete": element(By.css('.pg-body.ng-scope h1')),
-			"orderid": element.all(By.css('.summary p')).first()
+			"orderid": element.all(By.css('.summary p')).first(),
+			"orderdomain": element.all(By.css('.summary h3')).first()
 		},
 		"renewdomain":{
 			"renewsearch": element.all(By.model('form.element.query.value')).first(),

@@ -52,6 +52,9 @@ var UpsellPage = function(){
         browser.waitForAngular();
       }
       else if (sessionvalue == '"cpanel-hosting"'){
+        var cpanelCheckbox = $('form[name="cpanelHostingForm"] .checkbox-list input[name="domain"]');
+        cpanelCheckbox.click();
+
         var cpanelBtn = $('form[name="cpanelHostingForm"] button.btn.red');
         cpanelBtn.click();
         browser.waitForAngular();
