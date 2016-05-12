@@ -7,11 +7,12 @@ var newgtldupsellLaunch = require('./Flows/NewGTLDUpsellFlow.js');
 var cctldupsellLaunch = require('./Flows/CCTLDUpsellFlow.js');
 var paymentLaunch = require('./Flows/PaymentFlow.js');
 var thankYouPageLaunch = require('./Flows/ThankYouPageFlow.js');
+// var PerfRunner = require('protractor-perf');
 
 
 
 describe('Shopping Cart Test Suite', function(){
-
+// var perfRunner = new PerfRunner(protractor, browser);
 	var data = require('./testData/testdata.json');
 	var uuid = require('uuid');
 
@@ -47,9 +48,12 @@ describe('Shopping Cart Test Suite', function(){
 		//Test case to search a domain	
 
 			it('searches for a domain', function(){
-
+// perfRunner.start();
 			 domainSearchLaunch.DomainSearchFlow(genericdomain);
-					
+		// if (perfRunner.isEnabled) {
+  //           expect(perfRunner.getStats('meanFrameTime')).toBeLessThan(60);
+  //       };
+// perfRunner.stop();					
 		    });
 
 		//Test case to select available domain and added it to the cart
@@ -112,7 +116,7 @@ describe('Shopping Cart Test Suite', function(){
 				domainSearchResultsLaunch.addToCart();
 				orderSummaryLaunch.priceChange(commonyear);
 				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
+				loginPageLaunch.createAccount(user, pass);
 
 			});
 

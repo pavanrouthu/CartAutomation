@@ -9,10 +9,13 @@ var paymentLaunch = require('./Flows/PaymentFlow.js');
 var thankYouPageLaunch = require('./Flows/ThankYouPageFlow.js');
 
 var renewPageLaunch = require('./Flows/RenewFlow.js');
+var renewupsellLaunch = require('./Flows/RenewUpsellFlow.js');
+
+//var renewPageLaunch = require('./Flows/RenewFlow.js');
 
 describe('Shopping Cart Test Suite', function(){
 
-	var data = require('./testData/testdata.json');
+	var data = require('./testData/testdata complete.json');
 	var uuid = require('uuid');
 
 	var prod = data.products;
@@ -41,110 +44,110 @@ describe('Shopping Cart Test Suite', function(){
 		browser.executeScript('window.sessionStorage.clear();');
 
 	});
-	
-	xdescribe('Checks different tests within the Order Flow', function(){
 
-		//Test case to search a domain	
+		// describe('Checks different tests within the Order Flow', function(){
 
-			it('searches for a domain', function(){
+		// 	//Test case to search a domain	
 
-			 domainSearchLaunch.DomainSearchFlow(genericdomain);
-					
-		    });
+		// 		it('searches for a domain', function(){
 
-		//Test case to select available domain and added it to the cart
+		// 		 domainSearchLaunch.DomainSearchFlow(genericdomain);
+						
+		// 	    });
 
-		    it('selects the domain from the domain search result and adds to the cart',function(){
+		// 	//Test case to select available domain and added it to the cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
+		// 	    it('selects the domain from the domain search result and adds to the cart',function(){
 
-		    });
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
 
-		//Test case to check the products that were added to the cart
+		// 	    });
 
-			it('verify the products that were added to the cart',function(){
+		// 	//Test case to check the products that were added to the cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.validateProduct();
+		// 		it('verify the products that were added to the cart',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.validateProduct();
 
-		//Test case to change the value of the price
+		// 		});
 
-			it('to change the default value of the Price',function(){
+		// 	//Test case to change the value of the price
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
+		// 		it('to change the default value of the Price',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
 
-		//Test case to search a domain, add it to the cart and click continue on the Order Summary page.
+		// 		});
 
-			it('to continue with the domain selected on the Order Summary page',function(){
+		// 	//Test case to search a domain, add it to the cart and click continue on the Order Summary page.
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
-				orderSummaryLaunch.submitSummaryPage();
+		// 		it('to continue with the domain selected on the Order Summary page',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
+		// 			orderSummaryLaunch.submitSummaryPage();
 
-		//Test case to login to an existing myaccount within new cart
+		// 		});
 
-			it('to login using an existing login credentials on the Login page',function(){
+		// 	//Test case to login to an existing myaccount within new cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
-				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
+		// 		it('to login using an existing login credentials on the Login page',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
+		// 			orderSummaryLaunch.submitSummaryPage();
+		// 			loginPageLaunch.loginToAccount(user, pass);
 
-		//Test case to create a new myaccount within new cart
+		// 		});
 
-			it('to create new user credentials on the Login page',function(){
+		// 	//Test case to create a new myaccount within new cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
-				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
+		// 		it('to create new user credentials on the Login page',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
+		// 			orderSummaryLaunch.submitSummaryPage();
+		// 			loginPageLaunch.loginToAccount(user, pass);
 
-		//Test case to check the upsell pages within new cart
+		// 		});
 
-			it('to check for the upsell flow',function(){
+		// 	//Test case to check the upsell pages within new cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
-				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
-				gtldupsellLaunch.GTLDUpsellFlow();
+		// 		it('to check for the upsell flow',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
+		// 			orderSummaryLaunch.submitSummaryPage();
+		// 			loginPageLaunch.loginToAccount(user, pass);
+		// 			gtldupsellLaunch.GTLDUpsellFlow();
 
-		//Test case to check the order confirmation after checkout within new cart
+		// 		});
 
-			it('to verify the order confirmation after checkout',function(){
+		// 	//Test case to check the order confirmation after checkout within new cart
 
-				domainSearchLaunch.DomainSearchFlow(genericdomain);
-				domainSearchResultsLaunch.addToCart();
-				orderSummaryLaunch.priceChange(commonyear);
-				orderSummaryLaunch.submitSummaryPage();
-				loginPageLaunch.loginToAccount(user, pass);
-				gtldupsellLaunch.GTLDUpsellFlow();
-				paymentLaunch.createPayment(ccno, ccv, ccname);
-				thankYouPageLaunch.orderConfirmation();
+		// 		it('to verify the order confirmation after checkout',function(){
 
-			});
+		// 			domainSearchLaunch.DomainSearchFlow(genericdomain);
+		// 			domainSearchResultsLaunch.addToCart();
+		// 			orderSummaryLaunch.priceChange(commonyear);
+		// 			orderSummaryLaunch.submitSummaryPage();
+		// 			loginPageLaunch.loginToAccount(user, pass);
+		// 			gtldupsellLaunch.GTLDUpsellFlow();
+		// 			paymentLaunch.createPayment(ccno, ccv, ccname);
+		// 			thankYouPageLaunch.orderConfirmation();
 
-	}); //end of Checks different tests within the Order Flow test script
+		// 		});
+
+		// }); //end of Checks different tests within the Order Flow test script
 
 	describe('Verify ordering of all domain spaces', function(){
 
@@ -179,8 +182,8 @@ describe('Shopping Cart Test Suite', function(){
 			    var gtld = [".net",".com",".info", ".biz",".org", ".mobi"];
 			    var autld = [".com.au", ".net.au", ".org.au", ".asn.au",".id.au"];
 			    var cctld = [".ac.nz",".at",".be",".ca",".cc",".ch",".co",".co.at",".co.il",".co.nz",".co.uk",".co.za",".com.co",".com.es",".com.fj",".com.hk",".com.ph",".com.sg",".com.tw",".de",".geek.nz",".gen.nz",".hk",".it",".jp",".la",".maori.nz",".net.co",".net.nz",".nl",".nom.co",".nz",".org.nz",".ph",".school.nz",".to",".travel",".tv",".ws",".xxx"];
-			    var newgtld = [".sucks",".bid",".buzz",".club",".kiwi",".melbourne",".sydney",".pictures",".academy",".associates",".bargains",".bike",".boutique",".builders",".cab",".camera",".camp",".cards",".care",".cash",".catering",".cheap",".church",".cleaning",".clothing",".coffee",".community",".computer",".construction",".contractors",".cool",".deals",".digital",".direct",".discount",".domains",".enterprises",".estate",".events",".exchange",".fail",".farm",".fish",".fitness",".florist",".foundation",".gifts",".glass",".gripe",".guide",".guru",".house",".industries",".kitchen",".land",".life",".limited",".marketing",".media",".parts",".place",".plumbing",".productions",".properties",".rentals",".repair",".sarl",".services",".shoes",".singles",".solar",".supply",".tools",".town",".toys",".training",".vacations",".vision",".watch",".works",".world",".wtf",".zone",".agency",".business",".center",".city",".company",".directory",".education",".email",".equipment",".exposed",".gallery",".graphics",".gratis",".institute",".international",".lighting",".management",".network",".photography",".photos",".reisen",".report",".schule",".solutions",".supplies",".support",".systems",".technology",".tips",".today",".capital",".careers",".claims",".clinic",".codes",".condos",".cruises",".dating",".delivery",".dental",".diamonds",".engineering",".expert",".finance",".financial",".flights",".fund",".furniture",".healthcare",".holdings",".holiday",".insure",".lease",".limo",".maison",".partners",".pizza",".recipes",".restaurant",".surgery",".tax",".tienda",".university",".ventures",".viajes",".villas",".voyage",".accountants",".credit",".creditcard",".energy",".investments",".loans"];
-
+			    //var newgtld = [".rip", ".run", ".soccer", ".band", ".video", ".express", ".cafe", ".team", ".show", ".dog", ".forsale", ".sale", ".jewelry", ".theater", ".taxi", ".hockey", ".coupons",".sucks",".bid",".buzz",".club",".kiwi",".melbourne",".sydney",".pictures",".academy",".associates",".bargains",".bike",".boutique",".builders",".cab",".camera",".camp",".cards",".care",".cash",".catering",".cheap",".church",".cleaning",".clothing",".coffee",".community",".computer",".construction",".contractors",".cool",".deals",".digital",".direct",".discount",".domains",".enterprises",".estate",".events",".exchange",".fail",".farm",".fish",".fitness",".florist",".foundation",".gifts",".glass",".gripe",".guide",".guru",".house",".industries",".kitchen",".land",".life",".limited",".marketing",".media",".parts",".place",".plumbing",".productions",".properties",".rentals",".repair",".sarl",".services",".shoes",".singles",".solar",".supply",".tools",".town",".toys",".training",".vacations",".vision",".watch",".works",".world",".wtf",".zone",".agency",".business",".center",".city",".company",".directory",".education",".email",".equipment",".exposed",".gallery",".graphics",".gratis",".institute",".international",".lighting",".management",".network",".photography",".photos",".reisen",".report",".schule",".solutions",".supplies",".support",".systems",".technology",".tips",".today",".capital",".careers",".claims",".clinic",".codes",".condos",".cruises",".dating",".delivery",".dental",".diamonds",".engineering",".expert",".finance",".financial",".flights",".fund",".furniture",".healthcare",".holdings",".holiday",".insure",".lease",".limo",".maison",".partners",".pizza",".recipes",".restaurant",".surgery",".tax",".tienda",".university",".ventures",".viajes",".villas",".voyage",".accountants",".credit",".creditcard",".energy",".investments",".loans"];
+			    var newgtld = [".bar", ".college", ".design", ".host", ".love", ".online", ".press", ".rent", ".rest", ".site", ".tech", ".website", ".xyz", ".fans", ".theatre", ".wiki", ".space",".courses", ".holiday", ".solutions", ".study", ".systems", ".technology", ".actor", ".attorney", ".auction", ".bid", ".buzz", ".consulting", ".dance", ".degree", ".democrat", ".dentist", ".engineer", ".express", ".gives", ".golf", ".gold", ".lawyer", ".market", ".mortgage", ".ninja", ".plus", ".pub", ".rehab", ".republican", ".reviews", ".rocks", ".social", ".software", ".tour", ".vet", ".agency", ".apartments", ".associates", ".bargains", ".bike", ".bingo", ".boutique", ".builders", ".business", ".cab", ".camera", ".camp", ".capital", ".cards", ".care", ".careers", ".cash", ".casino", ".catering", ".center", ".chat", ".cheap", ".church", ".city", ".claims", ".cleaning", ".clinic", ".clothing", ".coach", ".codes", ".coffee", ".community", ".company", ".computer", ".condos", ".construction", ".contractors", ".cool", ".credit", ".creditcard", ".cruises", ".dating", ".deals", ".delivery", ".dental", ".diamonds", ".digital", ".direct", ".directory", ".discount", ".domains", ".education", ".email", ".energy", ".engineering", ".enterprises", ".equipment", ".estate", ".events", ".exchange", ".expert", ".exposed", ".fail", ".farm", ".finance", ".financial", ".fish", ".fitness", ".flights", ".florist", ".football", ".foundation", ".fund", ".furniture", ".gallery", ".gifts", ".glass", ".graphics", ".gratis", ".gripe", ".guide", ".guru", ".healthcare", ".holdings", ".house", ".industries", ".institute", ".insure", ".international", ".investments", ".kitchen", ".land", ".lease", ".legal", ".life", ".lighting", ".limited", ".limo", ".loans", ".maison", ".management", ".marketing", ".media", ".memorial", ".money", ".network", ".partners", ".parts", ".photography", ".photos", ".pizza", ".place", ".plumbing", ".productions", ".properties", ".recipes", ".reisen", ".rentals", ".repair", ".report", ".restaurant", ".sarl", ".school", ".schule", ".services", ".shoes", ".singles", ".solar", ".style", ".supplies", ".supply", ".support", ".surgery", ".tax", ".tennis", ".tienda", ".tips", ".tires", ".today", ".tools", ".tours", ".town", ".toys", ".training", ".university", ".vacations", ".ventures", ".viajes", ".villas", ".vision", ".voyage", ".watch", ".works", ".world", ".wtf", ".zone", ".academy", ".accountants", ".kiwi", ".band", ".rip", ".video", ".forsale", ".sale", ".cafe", ".team", ".jewelry", ".show", ".dog", ".theater", ".taxi", ".hockey", ".run", ".coupons", ".soccer", ".loans", ".club", ".melbourne", ".sydney", ".sucks"];
 			        
 				//**** gTLD Order Flow ****
 				if (prodname == "null" && (gtld.indexOf(prodspace) > -1)){
@@ -193,12 +196,13 @@ describe('Shopping Cart Test Suite', function(){
 						paymentLaunch.createPayment(ccno, ccv, ccname);
 						thankYouPageLaunch.orderConfirmation();
 
-						// renewPageLaunch.renewDomains(dom);
-						// orderSummaryLaunch.priceChange(yr);
-						// orderSummaryLaunch.submitSummaryPage();
-						// loginPageLaunch.loginToAccount(user, pass);
-						// paymentLaunch.createPayment(ccno, ccv, ccname);
-						// thankYouPageLaunch.orderConfirmation();
+						renewPageLaunch.renewDomains(dom);
+						orderSummaryLaunch.priceChange(yr);
+						orderSummaryLaunch.submitSummaryPage();
+						//loginPageLaunch.loginToAccount(user, pass);
+						renewupsellLaunch.UpsellFlow();
+						paymentLaunch.createPayment(ccno, ccv, ccname);
+						thankYouPageLaunch.orderConfirmation();
 
 				}//**** End gTLD Order Flow ****
 
@@ -216,7 +220,8 @@ describe('Shopping Cart Test Suite', function(){
 						renewPageLaunch.renewDomains(dom);
 						orderSummaryLaunch.priceChange(yr);
 						orderSummaryLaunch.submitSummaryPage();
-						loginPageLaunch.loginToAccount(user, pass);
+						//loginPageLaunch.loginToAccount(user, pass);
+						renewupsellLaunch.UpsellFlow();
 						paymentLaunch.createPayment(ccno, ccv, ccname);
 						thankYouPageLaunch.orderConfirmation();
 				}//**** End ccTLD Order Flow ****
@@ -235,7 +240,8 @@ describe('Shopping Cart Test Suite', function(){
 						renewPageLaunch.renewDomains(dom);
 						orderSummaryLaunch.priceChange(yr);
 						orderSummaryLaunch.submitSummaryPage();
-						loginPageLaunch.loginToAccount(user, pass);
+						//loginPageLaunch.loginToAccount(user, pass);
+						renewupsellLaunch.UpsellFlow();
 						paymentLaunch.createPayment(ccno, ccv, ccname);
 						thankYouPageLaunch.orderConfirmation();
 			    }//**** End newgTLD Order Flow ****

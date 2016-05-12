@@ -13,8 +13,20 @@ var PaymentPage = function(){
           var creditrcardname = utils.getLocator('orderpayment','ccname');
           var paymentbutton = utils.getLocator('orderpayment', 'paymentbtn');
 
+          var renewfirstname = utils.getLocator('orderpayment', 'contactfirstname');
+          var renewlastname = utils.getLocator('orderpayment', 'contactlastname');
+          var renewemail = utils.getLocator('orderpayment', 'contactemail');          
 
-    
+
+          renewfirstname.isDisplayed().then(function (isVisible) {
+            if (isVisible) {
+              renewfirstname.sendKeys("QA");
+              renewlastname.sendKeys("Dept");
+              renewemail.sendKeys("testing@melbourneit.com.au");
+            } 
+          });
+
+   
           ccnumber.sendKeys(ccno);
           cvv.sendKeys(ccv);
           ccmnth.click();

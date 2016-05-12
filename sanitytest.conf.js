@@ -1,12 +1,12 @@
 
-// var HtmlReporter = require('protractor-html-screenshot-reporter');
-//     // var jasmineReporters = require('jasmine-reporters');
+var HtmlReporter = require('protractor-html-screenshot-reporter');
 
-// var reporter = new HtmlReporter({
-//     baseDirectory: './protractor-result', // a location to store screen shots.
-//     docTitle: 'Protractor Reporter',
-//     docName:    'protractor-tests-report.html'
-// });
+
+var reporter = new HtmlReporter({
+    baseDirectory: './protractor-result', // a location to store screen shots.
+    docTitle: 'Protractor Reporter',
+    docName:    'protractor-tests-report.html'
+});
 
 exports.config = {
   seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
@@ -24,16 +24,16 @@ exports.config = {
     platform: 'ANY'
   },
 
-  //  onPrepare: function() {
-		// jasmine.getEnv().addReporter(reporter);
-  //  }
-  onPrepare: function() {
-  // The require statement must be down here, since jasmine-reporters
-  // needs jasmine to be in the global and protractor does not guarantee
-  // this until inside the onPrepare function.
-  require('jasmine-reporters');
-  jasmine.getEnv().addReporter(
-    new jasmine.JUnitXmlReporter('cartxmloutput', true, true));
-}
+   onPrepare: function() {
+		 jasmine.getEnv().addReporter(reporter);
+   }
+//   onPrepare: function() {
+// //   The require statement must be down here, since jasmine-reporters
+// //   needs jasmine to be in the global and protractor does not guarantee
+// //   this until inside the onPrepare function.
+//   require('jasmine-reporters');
+//   jasmine.getEnv().addReporter(
+//     new jasmine.JUnitXmlReporter('cartxmloutput', true, true));
+// }
 
 };

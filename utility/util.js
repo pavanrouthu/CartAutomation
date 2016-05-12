@@ -43,11 +43,15 @@ var utildata = function(){
 			"ccmonth": $('select[id="expiryMonth"]').element(By.cssContainingText('option', dropdownData.ccmonth)),
 			"ccyr": $('select[id="expiryYear"]').element(By.cssContainingText('option', dropdownData.ccyear)),
 			"ccname": element(By.id('name')),
-			"paymentbtn": $('form[name="ccForm"] button.btn.red')
+			"paymentbtn": $('form[name="ccForm"] button.btn.red'),
+			"contactfirstname": element.all(By.id('firstname')).first(),
+			"contactlastname": element.all(By.id('lastname')).first(),
+			"contactemail": element.all(By.id('email')).first(),
 		},			
 		"orderconf":{
 			"ordercomplete": element(By.css('.pg-body.ng-scope h1')),
-			"orderid": element.all(By.css('.summary p')).first()
+			"orderid": element.all(By.css('.summary p')).first(),
+			"orderdomain": element.all(By.css('.summary h3')).first()
 		},
 		"renewdomain":{
 			"renewsearch": element.all(By.model('form.element.query.value')).first(),
