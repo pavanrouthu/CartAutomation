@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
+<<<<<<< HEAD
 <testsuite name="Shopping Cart Test Suite" errors="0" tests="0" failures="0" time="0" timestamp="2015-10-13T10:48:21">
 </testsuite>
 <testsuite name="Shopping Cart Test Suite.Checks different tests within the Order Flow" errors="0" tests="2" failures="0" time="13.849" timestamp="2015-10-13T10:48:07">
   <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="searches for a domain" time="8.166"></testcase>
   <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="selects the domain from the domain search result and adds to the cart" time="5.683"></testcase>
+=======
+<testsuite name="Shopping Cart Test Suite" errors="0" tests="0" failures="0" time="0" timestamp="2015-10-13T03:25:14">
+</testsuite>
+<testsuite name="Shopping Cart Test Suite.Checks different tests within the Order Flow" errors="0" tests="9" failures="0" time="152.697" timestamp="2015-10-13T03:22:41">
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="searches for a domain" time="13.083"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="selects the domain from the domain search result and adds to the cart" time="12.473"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="verify the products that were added to the cart" time="9.509"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to change the default value of the Price" time="10.034"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to continue with the domain selected on the Order Summary page" time="12.881"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to login using an existing login credentials on the Login page" time="15.996"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to create new user credentials on the Login page" time="19.075"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to check for the upsell flow" time="17.46"></testcase>
+  <testcase classname="Shopping Cart Test Suite.Checks different tests within the Order Flow" name="to verify the order confirmation after checkout" time="42.18"></testcase>
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 </testsuite>
 </testsuites>

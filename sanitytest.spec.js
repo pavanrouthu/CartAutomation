@@ -10,7 +10,6 @@ var thankYouPageLaunch = require('./Flows/ThankYouPageFlow.js');
 // var PerfRunner = require('protractor-perf');
 
 
-
 describe('Shopping Cart Test Suite', function(){
 // var perfRunner = new PerfRunner(protractor, browser);
 	var data = require('./testData/testdata.json');
@@ -50,10 +49,14 @@ describe('Shopping Cart Test Suite', function(){
 			it('searches for a domain', function(){
 // perfRunner.start();
 			 domainSearchLaunch.DomainSearchFlow(genericdomain);
+<<<<<<< HEAD
 		// if (perfRunner.isEnabled) {
   //           expect(perfRunner.getStats('meanFrameTime')).toBeLessThan(60);
   //       };
 // perfRunner.stop();					
+=======
+				
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 		    });
 
 		//Test case to select available domain and added it to the cart

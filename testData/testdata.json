@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
 "username":"cartuser2",
+=======
+"username":"cartuser1",
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 "password":"password",
 "ccnumber":"4111111111111111",
 "cctype":"VISA",
@@ -9,6 +13,7 @@
 "ccname":"testCC",
 "genericspace": ".com",
 "genericyear": "2 Years",
+<<<<<<< HEAD
 "products": 
 [
 {
@@ -872,5 +877,11 @@
   "names": "null",
   "domainspace": ".florist"
 }
+=======
+"products":[
+    {"names":"null", "domainspace":".com", "Yr":"3 Years"},
+    {"names":"null", "domainspace":".ca", "Yr":"3 Years"},
+    {"names":"null", "domainspace":".rip", "Yr":"2 Years"}
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 ]
 }

@@ -1,5 +1,10 @@
 
+<<<<<<< HEAD
 var HtmlReporter = require('protractor-html-screenshot-reporter');
+=======
+// var HtmlReporter = require('protractor-html-screenshot-reporter');
+
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 
 
 var reporter = new HtmlReporter({
@@ -19,11 +24,12 @@ exports.config = {
   //Browser and Capabilities: Firefox
   //-----------------------------------------------------------------
   capabilities: {
-    browserName: 'chrome',
+    browserName: 'firefox',
     version: '',
     platform: 'ANY'
   },
 
+<<<<<<< HEAD
    onPrepare: function() {
 		 jasmine.getEnv().addReporter(reporter);
    }
@@ -35,5 +41,18 @@ exports.config = {
 //   jasmine.getEnv().addReporter(
 //     new jasmine.JUnitXmlReporter('cartxmloutput', true, true));
 // }
+=======
+  //  onPrepare: function() {
+		// jasmine.getEnv().addReporter(reporter);
+  //  }
+  onPrepare: function() {
+//   The require statement must be down here, since jasmine-reporters
+//   needs jasmine to be in the global and protractor does not guarantee
+//   this until inside the onPrepare function.
+  require('jasmine-reporters');
+  jasmine.getEnv().addReporter(
+    new jasmine.JUnitXmlReporter('cartxmloutput', true, true));
+}
+>>>>>>> 514a7aab60130d4af5fa429c5da210e3acdf737e
 
 };

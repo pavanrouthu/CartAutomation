@@ -11,6 +11,7 @@ var DomainSearchPage = function(){
   this.enterDomain = function(dom){
     // var randStrg = uuid.v1();
     // global.dom = 'refactor' + randStrg + '.com';
+    browser.get('');
     domSearch.sendKeys(dom);
 
   };
