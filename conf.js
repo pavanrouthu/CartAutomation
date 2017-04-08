@@ -11,7 +11,7 @@ var reporter = new HtmlReporter({
 exports.config = {
   seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   specs: ['spec.js'],
-  baseUrl: 'https://stage.melbourneit.com.au/',
+  baseUrl: 'https://<site>/',
   allScriptsTimeout: 10000000,
   jasmineNodeOpts: {showColors: true, defaultTimeoutInterval: 50000000},
 
